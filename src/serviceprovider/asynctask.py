@@ -84,18 +84,16 @@ class AsyncTask():
 
         for i in range(times_requested):
             link = recent_image_link[i]
-            for idx in range(len(link)):
-                url = link
-                task = asyncio.ensure_future(self.fetch_username_url(url[idx]))
+            for url in link:
+                task = asyncio.ensure_future(self.fetch_username_url(url))
                 user_name_url.append(task)
 
         user_url_response = await asyncio.gather(*user_name_url)
 
-        for i in range(len(user_url_response)):
-            url = user_url_response
-            task = asyncio.ensure_future(self.fetch_bio(url[i]))
+        for url in user_url_response:
+            task = asyncio.ensure_future(self.fetch_bio(url))
             biography.append(task)
-            task = asyncio.ensure_future(self.fetch_follows(url[i]))
+            task = asyncio.ensure_future(self.fetch_follows(url))
             follow_n_follower.append(task)
 
         bio_status = await asyncio.gather(*biography)
