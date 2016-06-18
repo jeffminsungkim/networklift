@@ -100,5 +100,6 @@ class AsyncTask():
         follow_status = await asyncio.gather(*follow_n_follower)
 
         recent_image = RecentImage(recent_image_link, bio_status, follow_status)
-        recent_image.fetch_approved_url_depends_on_number_of_tags()
+        recent_image_url = recent_image.fetch_approved_url_depends_on_number_of_tags()
+        print("RECENT URL:", recent_image_url)
         recent_image.fetch_approved_follow_status_depends_on_number_of_tags()

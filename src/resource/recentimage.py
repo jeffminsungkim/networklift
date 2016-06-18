@@ -36,7 +36,6 @@ class RecentImage:
                     for j in range(1):
                         url = self.recent_url_links[i][j]
                         if bio_is_fine and number_of_tags < 3:
-                            print("RECENT URL:", url)
                             approved_url_links.append(url)
                             self.recent_url_links[i].remove(url)
                             self.biographies.remove(self.biographies[accord_with_tag])
@@ -44,7 +43,6 @@ class RecentImage:
                             self.follow_list.remove(self.follow_list[accord_with_tag])
                             num_of_passed_image_link += 1
                         elif bio_is_fine and number_of_tags == 3:
-                            print("RECENT URL:", url)
                             approved_url_links.append(url)
                             self.recent_url_links[i].remove(url)
                             temp_follow_list.append(self.follow_list[accord_with_tag])
