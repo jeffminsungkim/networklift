@@ -4,7 +4,7 @@
 **_3.5.1_**
 
 ## Objectives
-> - Write a script that fetches 10 RECENT Instagram image URLs from a given tag.
+  - Write a script that fetches 10 RECENT Instagram image URLs from a given tag.
   - For those 10 images, I'm going to filter out images that contain the words; kik, click, or push.
   - Check the caption of the image and the bio text of the user who posted the image.
   - If any of those three words are detected skip them, otherwise save/print them. _(Use the user ID or image itself to load and get the user bio text etc.)_
